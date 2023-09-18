@@ -20,6 +20,85 @@
 		<script src="assets/js/app.js" defer></script>
 	</head>
 	<body>
-		<h1>Teste</h1>
+		<!--  -->
+		<div id="register_container" data_register_container>
+			<!--  -->
+			<div id="register_banner">
+				<!--  -->
+				<div id="banner_layer" data_banner_layer>
+					<h1>Seja bem-vindo</h1>
+				</div>
+			</div>
+
+			<!--  -->
+			<div id="register_form" data_register_form>
+				<h2>Crie sua conta</h2>
+				<p>Registre-se para utilizar todas as funcionalidades do sistema</p>
+
+				<!--  -->
+				<div class="form_control" data_form_control>
+					<label for="name">Nome</label>
+					<input
+						type="text"
+						name="name"
+						id="name"
+						placeholder="Digite seu nome..."
+						data_name
+					/>
+				</div>
+
+				<!--  -->
+				<div class="form_control" data_form_control>
+					<label for="email">E-mail</label>
+					<input
+						type="email"
+						name="email"
+						id="email"
+						placeholder="Digite seu email..."
+						data_email
+					/>
+				</div>
+
+				<!--  -->
+				<div class="form_control" data_form_control>
+					<label for="password">Senha</label>
+					<input
+						type="password"
+						name="password"
+						id="password"
+						placeholder="Digite sua senha..."
+						data_password
+					/>
+				</div>
+
+				<!--  -->
+				<p>
+					Quer ajuda para criar uma senha segura?
+					<span id="generate_password" data_generate_password
+						>Clique aqui!</span
+					>
+				</p>
+
+				<!--  -->
+				<div id="generate_password">
+					<p>Aqui está a sua senha:</p>
+					<h4></h4>
+				</div>
+
+				<!--  -->
+				<div class="form_control" data_form_control>
+					<label for="confirm_password">Confirmação de senha</label>
+					<input
+						type="password"
+						name="confirm_password"
+						id="confirm_password"
+						placeholder="Confirme sua senha..."
+						data_confirm_password
+					/>
+				</div>
+
+				<input type="submit" value="Cadastrar" />
+			</div>
+		</div>
 	</body>
 </html>
