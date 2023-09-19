@@ -123,7 +123,7 @@ input:focus {
     color: var(--color_0);
     text-align: center;
     margin-bottom: 1rem;
-    display: none;
+    /* display: none; */
 }
 
 #register_form #generated_password p {
