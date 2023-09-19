@@ -18,6 +18,9 @@
     --color_8: #AAAAAA;
     --color_9: #0099FF;
     --color_10: #81D340;
+    --color_11: #DDDDDD;
+    --color_12: #CCCCCC;
+    --color_13: #daf4c7;
 }
 
 html,
@@ -104,14 +107,36 @@ input:focus {
     padding: 0.6rem 0;
 }
 
-#generate_password {
+#open_generate_password {
     font-weight: bold;
     cursor: pointer;
     transition: 0.4s;
 }
 
-#generate_password:hover {
+#open_generate_password:hover {
     color: var(--color_9);
+}
+
+#generate_options {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--color_11);
+}
+
+#generate_options .form_control {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#generate_options label {
+    font-size: 0.8rem;
+}
+
+#generate_options input[type='text'] {
+    max-width: 30px;
+    text-align: center;
+    border: 1px solid var(--color_12);
 }
 
 #register_form #generated_password {
@@ -123,7 +148,7 @@ input:focus {
     color: var(--color_0);
     text-align: center;
     margin-bottom: 1rem;
-    /* display: none; */
+    display: none;
 }
 
 #register_form #generated_password p {
@@ -131,7 +156,9 @@ input:focus {
     margin-bottom: 0.5rem;
 }
 
-#register_form  input[type='submit'] {
+#register_form  input[type='submit'],
+#generate_options button,
+#copy_password {
     background-color: var(--color_10);
     color: var(--color_6);
     opacity: 0.8;
@@ -146,4 +173,28 @@ input:focus {
 
 #register_form  input[type='submit']:hover {
     opacity: 1;
+}
+
+#generate_options button {
+    background-color: var(--color_2);
+    display: block;
+    margin: 0 auto;
+}
+
+#copy_password {
+    margin: 1rem auto;
+    background-color: transparent;
+    border: 1px solid var(--color_10);
+    color: var(--color_0);
+    padding: 0.5rem 1rem;
+}
+
+#copy_password:hover {
+    background-color: var(--color_13);
+    border: 1px solid var(--color_10);
+    color: var(--color_0);
+}
+
+.hide {
+    display: none;
 }
