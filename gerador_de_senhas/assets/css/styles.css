@@ -111,7 +111,7 @@ input:focus {
 }
 
 #generate_password:hover {
-    background-color: var(--color_9);
+    color: var(--color_9);
 }
 
 #register_form #generated_password {
