@@ -4,6 +4,17 @@
 const generated_password_element = document.querySelector('[data_generated_password]');
 const generate_password_button = document.querySelector('[data_generate_password]');
 
+/*
+    new features
+*/
+const open_close_generate_button = document.querySelector('[data_open_generate_password]');
+const generate_password_container = document.querySelector('[data_generate_options]');
+const copy_password_button = document.querySelector('[data_copy_password]');
+const letters_input = document.querySelector('[data_letters]');
+const numbers_input = document.querySelector('[data_numbers]');
+const symbols_input = document.querySelector('[data_symbols]');
+const length_input = document.querySelector('[data_length]');
+
 /* 
     functions 
 */
@@ -31,9 +42,24 @@ const getSymbol = () => {
 // 
 const generatePassword = (getLetterLowerCase, getLetterUpperCase, getNumber, getSymbol) => {
     let password = '';
-    const password_length = 10;
+    const password_length = +length_input.value;
+    const generators = [];
 
-    const generators = [getLetterLowerCase, getLetterUpperCase, getNumber, getSymbol];
+    if (letters_input.checked) {
+        generators.push(getLetterLowerCase, getLetterUpperCase);
+    };
+
+    if (numbers_input.checked) {
+        generators.push(getNumber);
+    };
+
+    if (symbols_input.checked) {
+        generators.push(getSymbol);
+    };
+
+    if (generators.length === 0) {
+        return;
+    };
 
     for (i = 0; i < password_length; i = i + generators.length) {
         generators.forEach(() => {
@@ -51,6 +77,12 @@ const generatePassword = (getLetterLowerCase, getLetterUpperCase, getNumber, get
 /* 
     events 
 */
+// 
 generate_password_button.addEventListener('click', () => {
     generatePassword(getLetterLowerCase, getLetterUpperCase, getNumber, getSymbol);
+});
+
+// 
+open_close_generate_button.addEventListener('click', () => {
+    generate_password_container.classList.toggle('hide');
 });
