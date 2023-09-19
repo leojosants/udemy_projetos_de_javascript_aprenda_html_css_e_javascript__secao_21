@@ -86,3 +86,17 @@ generate_password_button.addEventListener('click', () => {
 open_close_generate_button.addEventListener('click', () => {
     generate_password_container.classList.toggle('hide');
 });
+
+// 
+copy_password_button.addEventListener('click', (event)=>{
+    event.preventDefault();
+    const copied_password = generated_password_element.querySelector('h4').innerText;
+
+    navigator.clipboard.writeText(copied_password).then(() => {
+        copy_password_button.innerHTML = 'Senha copiada com sucesso!';
+    });
+
+    setTimeout(() => {
+        copy_password_button.innerText = 'Copiar';
+    },2000);
+});
